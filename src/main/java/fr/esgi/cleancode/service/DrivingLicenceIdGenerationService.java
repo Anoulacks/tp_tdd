@@ -10,7 +10,5 @@ public class DrivingLicenceIdGenerationService {
         return UUID.randomUUID();
     }
 
-    public DrivingLicence createNewDrivingLicence(String securityNumber) {
-        return null;
-    }
+
 }
