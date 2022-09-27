@@ -1,5 +1,6 @@
 package fr.esgi.cleancode.service;
 
+import fr.esgi.cleancode.model.DrivingLicence;
 import org.junit.jupiter.api.Test;
 
 import java.util.UUID;
@@ -16,4 +17,15 @@ class DrivingLicenceIdGenerationServiceTest {
                 .isNotNull()
                 .isEqualTo(UUID.fromString(actual.toString()));
     }
+
+    @Test
+    void should_have_total_points() {
+        final var securityNumber = "123456789012345";
+        final var drivingLicence = service.createNewDrivingLicence(securityNumber);
+        assertThat(drivingLicence.getAvailablePoints()).isEqualTo(12);
+    }
+
+
+
+
 }

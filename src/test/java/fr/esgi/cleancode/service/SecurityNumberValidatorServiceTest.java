@@ -20,7 +20,7 @@ public class SecurityNumberValidatorServiceTest {
     @Test
     void should_invalid_securityNumber() {
         final var securityNumber = "azer";
-        assertThat(service.checkSecurityNumber(securityNumber)).isTrue();
+        assertThat(service.checkSecurityNumber(securityNumber)).isFalse();
     }
 
 
