@@ -14,6 +14,7 @@ public class SecurityNumberValidatorServiceTest {
     void should_valid_securityNumber() {
         final var securityNumber = "123456789012345";
         assertThat(service.checkSecurityNumber(securityNumber)).isTrue();
+
     }
 
     @Test
