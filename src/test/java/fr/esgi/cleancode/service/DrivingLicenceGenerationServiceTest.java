@@ -31,7 +31,6 @@ public class DrivingLicenceGenerationServiceTest {
         final var uuid = serviceLicenceIdGeneration.generateNewDrivingLicenceId();
         final var drivingLicence = serviceLicenceGeneration.createNewDrivingLicence(securityNumber);
         when(serviceSecurityNumber.checkSecurityNumber(securityNumber)).thenReturn(true);
-        when(uuid).thenReturn(uuid);
         when(database.save(drivingLicence.getId(), drivingLicence)).thenReturn(drivingLicence);
         final var actual = database.save(uuid, drivingLicence);
         assertThat(drivingLicence).isEqualTo(actual);

@@ -16,9 +16,10 @@ public class DrivingLicenceGenerationService {
     public DrivingLicence createNewDrivingLicence(String securityNumber) {
         UUID newUUID = serviceLicenceIdGeneration.generateNewDrivingLicenceId();
         if(serviceSecurityNumber.checkSecurityNumber(securityNumber)){
-            DrivingLicence newDrivingLicence = DrivingLicence.builder().id(newUUID).build();
+            DrivingLicence newDrivingLicence = DrivingLicence.builder().id(newUUID).driverSocialSecurityNumber(securityNumber).build();
             return inMemoryDatabase.save(newDrivingLicence.getId(), newDrivingLicence);
+        } else {
+            return null;
         }
-        return null;
     }
 }

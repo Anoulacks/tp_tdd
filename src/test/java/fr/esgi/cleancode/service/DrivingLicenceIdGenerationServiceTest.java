@@ -14,9 +14,6 @@ class DrivingLicenceIdGenerationServiceTest {
     @InjectMocks
     private DrivingLicenceIdGenerationService serviceLicenceIdGeneration;
 
-    @Mock
-    private InMemoryDatabase database;
-
     @Test
     void should_generate_valid_UUID() {
         final var actual = serviceLicenceIdGeneration.generateNewDrivingLicenceId();
